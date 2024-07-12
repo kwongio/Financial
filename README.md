@@ -12,10 +12,10 @@
 2. CompletableFuture
 
 ### 사용기술
-Spring Boot 3
-Java 17
-gradle
-Lombok
+Spring Boot 3  
+Java 17  
+gradle  
+Lombok  
 
 - 잔액 조회: `GET /account/{id}/balance`
 - 입금: `POST /account/{id}/deposit`
