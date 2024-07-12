@@ -9,7 +9,6 @@ import java.util.HashMap;
 public class BalanceRepository {
     private final HashMap<Long, Account> db = new HashMap<>();
 
-
     public Account findById(Long id) {
         return db.computeIfAbsent(id, k -> Account.builder()
                 .balance(0)

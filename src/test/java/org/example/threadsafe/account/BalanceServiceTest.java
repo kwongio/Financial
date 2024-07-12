@@ -55,7 +55,7 @@ class BalanceServiceTest {
     }
 
 
-    @DisplayName("한명의 유저에게 동시에 2개 이상 올 경우 실패한다.")
+    @DisplayName("한명의 유저에게 동시에 입금요청이 2개 이상 올 경우 실패한다.")
     @Test
     void deposit() throws Exception {
         ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors() + 1);
@@ -77,7 +77,7 @@ class BalanceServiceTest {
     }
 
 
-    @DisplayName("한명의 유저에게 동시에 2개 이상 올 경우 실패한다.")
+    @DisplayName("한명의 유저에게 동시에 입금요청이 2개 이상 올 경우 실패한다.")
     @Test
     void deposit_completableFuture() throws ExecutionException, InterruptedException {
         ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors() + 1);
