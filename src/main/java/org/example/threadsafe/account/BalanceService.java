@@ -35,14 +35,18 @@ public class BalanceService {
         ReentrantLock lock = getLock(id);
         if (lock.tryLock()) {
             try {
+                Thread.sleep(100);
                 Account account = getAccount(id);
                 account.deposit(amount);
                 balanceRepository.save(id, account);
                 return account;
-            }  finally {
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            } finally {
                 lock.unlock();
             }
         } else {
+            System.out.println("에러 발생");
             throw new RuntimeException("Account is locked");
         }
     }
